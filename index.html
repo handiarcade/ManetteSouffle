@@ -44,7 +44,47 @@
                 </button>
             </div>
         </div>
+ <div class="mb-4 text-center">
+            <label for="language-selector">Choisissez votre langue :</label>
+            <select id="language-selector" class="form-select w-auto d-inline-block">
+                <option value="fr">Français</option>
+                <option value="en">English</option>
+                <option value="es">Español</option>
+                <option value="de">Deutsch</option>
+                <option value="it">Italiano</option>
+                <option value="zh">中文</option>
+                <option value="ja">日本語</option>
+                <option value="ru">Русский</option>
+                <option value="ar">العربية</option>
+                <option value="hi">हिन्दी</option>
+            </select>
+        </div>
 
+        <div id="error" class="alert alert-danger d-none"></div>
+
+        <div class="text-center text-muted mt-4 mb-4">
+            For more information, see <a class="text-reset" href="https://github.com/jfedor2/hid-remapper">github.com/jfedor2/hid-remapper</a>.
+        </div>
+    </div>
+
+    <script>
+        const translations = {
+            en: "HID Remapper Configuration OxyControl",
+            fr: "Configuration HID Remapper OxyControl",
+            es: "Configuración de HID Remapper OxyControl",
+            de: "HID Remapper Konfiguration OxyControl",
+            it: "Configurazione HID Remapper OxyControl",
+            zh: "HID 重新映射器配置 OxyControl",
+            ja: "HID リマッパー設定 OxyControl",
+            ru: "Конфигурация HID Remapper OxyControl",
+            ar: "تكوين HID Remapper OxyControl",
+            hi: "एचआईडी रिमैपर कॉन्फ़िगरेशन OxyControl"
+        };
+
+        document.getElementById('language-selector').addEventListener('change', function() {
+            document.getElementById('title').textContent = translations[this.value] || translations['en'];
+        });
+    </script>
         <div id="error" class="alert alert-danger d-none"></div>
 
         <div class="nav nav-tabs" id="nav-tab" role="tablist">
